@@ -1,0 +1,6 @@
+terraform {
+  {% if backend_type == "gcs" %}backend "gcs" {
+    bucket = "enigma-devops-tfstate"
+    prefix = "terraform/state"
+  }{% endif %}
+}

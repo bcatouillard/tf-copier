@@ -1,0 +1,35 @@
+# settings
+_answers_file: .copier-answers.yml
+_exclude:
+  - ".git"
+  - "README.md"
+
+# questions
+project_name:
+  type: str
+  help: What is your project name?
+
+state_storage:
+  type: bool
+  help: Will your state stored remotely?
+
+backend_type:
+  type: str
+  choices:
+    - gcs
+  default: gcs
+  help: "What type of backend?"
+  when: "{{ state_storage }}"
+
+backend_name:
+  type: str
+  help: What's the name of the bucket?
+  when: "{{ state_storage }}"
+
+region:
+  type: str
+  help: What is your CSP region?
+
+csp_project:
+  type: str
+  help: What is your CSP project?

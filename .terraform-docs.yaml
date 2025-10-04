@@ -1,0 +1,28 @@
+# To update docs without pre-commit, use this command :
+# $ terraform-docs --output-file=README.md --output-mode=inject md .
+
+formatter: "markdown table"
+
+output:
+  template: |-
+    <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+    {{ .Content }}
+    <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+sections:
+  show:
+    - requirements
+    - providers
+    - modules
+    - resources
+    - data-sources
+    - inputs
+    - outputs
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  default: true
+  lockfile: false

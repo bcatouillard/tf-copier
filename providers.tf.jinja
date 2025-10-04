@@ -1,0 +1,4 @@
+{% if backend_type == "gcs" %}provider "google" {
+  region = var.region
+  project = var.project
+}{% endif %}

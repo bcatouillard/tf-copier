@@ -1,0 +1,22 @@
+# Checkov — IaC static configuration file.
+# Doc : https://www.checkov.io/2.Basics/CLI%20Command%20Reference.html
+
+framework:
+  - terraform
+
+directory:
+  - .
+
+# Ignore specific checks.
+skip-check:
+  # GCS : optional versionning depends on the use case.
+  - CKV_GCP_78
+  # GKE : Shielded nodes unavailable on certain machine types
+  - CKV_GCP_71
+
+# Soft-fail : If true, display error without blocking.
+soft-fail: false
+
+# Output format.
+output: cli
+compact: true

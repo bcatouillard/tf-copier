@@ -15,7 +15,7 @@ repos:
     hooks:
       - id: checkov
         args:
-          - --config-file=.checkov.yml
+          - --config-file=.checkov.yaml
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.105.0
